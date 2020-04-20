@@ -1,27 +1,29 @@
 //chiedere all'utente il numero di chilometri che vuole percorrere
-var km = prompt ('Quanti chilometri vuoi percorrere?');
+var km = prompt ('Chilometri da percorrere:');
 
-console.log (km);
+console.log ('kms:' + km);
 
 // chiedere l'età del passeggero.
-var eta = prompt ('Quanti anni hai?');
+var eta = prompt ('Età del viaggiatore');
 
-console.log(eta);
+console.log( 'età:' + eta);
 
-//Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio, secondo queste regole:
 //    il prezzo del biglietto è definito in base ai km (0.21 € al km)
-var prezzokm = km * 0.21 + '€';
-console.log(prezzokm);
+var prezzokm = km * 0.21 ;
 
-//prezzo per minorenni (con 20% di sconto)
-var prezzominorenni = prezzokm * 0.8 + '€';
+console.log('Prezzo intero del biglietto:' + prezzokm + '€');
 
-//    va applicato uno sconto del 20% per i minorenni
+
+//calcolare il prezzo totale del viaggio
+//per le personne che sono nelle fasce di età tra 18 - 65 anni
 if (eta >= 18 && eta < 65){
-    console.log("Il tuo biglietto costerà" + prezzokm );
-} else if (eta < 18){
-    console.log('Il tuo biglietto costerà' + prezzominorenni );
-
+    console.log('Prezzo finale del biglietto:' + prezzokm + '€' );
 }
-
+//    va applicato uno sconto del 20% per i minorenni
+else if (eta < 18){
+    console.log('Prezzo finale del biglietto:' + (prezzokm * 0.8) + '€' );
+}
 //    va applicato uno sconto del 40% per gli over 65
+else {
+    console.log('Prezzo finale del biglietto:' + (prezzokm * 0.6) + '€');
+}
